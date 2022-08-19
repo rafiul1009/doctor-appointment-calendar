@@ -1,0 +1,167 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
+}
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #3f51b5 #f1f1f1;
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f51b5;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3647a7;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.me-2 {
+    margin-right: 20px !important;
+}
+.mb-2 {
+    margin-bottom: 20px !important;
+}
+.mb-3 {
+    margin-bottom: 30px !important;
+}
+.mt-2 {
+    margin-top: 20px !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/* Full HD - TV Layout: 2560px. */
+@media only screen and (min-width: 2560px) and (max-width: 4000px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* Full HD - Small TV Layout: 2000px. */
+@media only screen and (min-width: 2200px) and (max-width: 2559px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+}
+
+/* HD Layout: 1920px. */
+@media only screen and (min-width: 1601px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Laptop with HDPI: 1440px */
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Normal PC: 1366px */
+@media only screen and (min-width: 1301px) and (max-width: 1399px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+}
+
+/* Laptop with MDPI: 1280px */
+@media only screen and (min-width: 1201px) and (max-width: 1300px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Medium Layout: 1080px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Medium Layout(iPad Pro): 1024px. */
+@media only screen and (min-width: 992px) and (max-width: 1050px) {
+    .container {
+        max-width: 960px;
+    }
+  
+}
+
+/* Tablet Layout: 768px. */
+@media only screen and (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+  
+}
+
+/* Mobile Layout: 375px. */
+@media only screen and (max-width: 767px) {
+}
+
+/* Wide Mobile Layout(Nexus 7): 600px. */
+@media only screen and (max-width: 610px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+/* Wide Mobile Layout: 480px. */
+@media only screen and (max-width: 500px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* Mobile Layout(Pixel 2): 480px. */
+@media only screen and (max-width: 420px) {
+}
+
+/* Mobile Layout(iPhone 6): 400px. */
+@media only screen and (max-width: 400px) {
+    
+}
+
+/* Mobile Layout(Samsung Galaxy S5): 360px. */
+@media only screen and (max-width: 370px) {
+}
+
+/* Mobile Layout(iPhone 4): 320px. */
+@media only screen and (max-width: 330px) {
+}

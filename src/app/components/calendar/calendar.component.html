@@ -1,0 +1,12 @@
+<div class="calendar" *ngIf="monthDays && monthDays.length > 0">
+  <div *ngFor='let weekDay of weekDaysName' class="day weekday">
+    {{ weekDay }}
+  </div>
+
+  <div *ngFor='let day of monthDays' class="day">
+    <div class="date">{{ day.number }}</div>
+    <div class="event-list" *ngIf="day.events && day.events.length > 0">
+      <button type="button" *ngFor='let event of day.events' (click)="showEventModal(event)">{{event.time}}</button>
+    </div>
+  </div>
+</div>

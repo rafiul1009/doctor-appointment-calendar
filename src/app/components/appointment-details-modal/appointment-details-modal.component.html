@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Appointment Details</h1>
+<div mat-dialog-content class="dialog-content">
+  <p><strong>Name:</strong> {{ data.firstname }} {{ data.lastname }}</p>
+  <p><strong>Email:</strong> <a href="mailto:{{ data.email }}">{{ data.email }}</a></p>
+  <p class="text-capitalize"><strong>Gender:</strong> {{ data.gender ? data.gender : "N/A" }}</p>
+  <p><strong>Age:</strong> {{ data.age ? data.age : "N/A" }}</p>
+  <p><strong>Appointment Date and Time:</strong> <span class="badge">{{ data.date }} {{ data.time }}</span></p>  
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-raised-button (click)="onOkClick()" color="primary">Ok</button>
+</div>

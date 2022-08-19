@@ -1,0 +1,84 @@
+<div>
+  <div class="add-title">
+    <h2 class="primary">Create Appointment</h2>
+  </div>
+    <form [formGroup]="createAppointmentForm">
+      <mat-dialog-content>
+        <mat-form-field class="w-100 mb-2">
+          <input matInput placeholder="First Name" formControlName="firstname" required />
+          <mat-error *ngIf="createAppointmentForm.controls['firstname'].hasError('required')">
+            Please enter first name
+          </mat-error>
+          <mat-error *ngIf="createAppointmentForm.controls['firstname'].hasError('pattern')">
+            Please enter valid first name
+          </mat-error>
+          <mat-error *ngIf="createAppointmentForm.controls['firstname'].hasError('maxlength')">
+            Maximum 40 characters
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100 mb-2">
+          <input matInput placeholder="Last Name" formControlName="lastname" required />
+          <mat-error *ngIf="createAppointmentForm.controls['lastname'].hasError('required')">
+            Please enter last name
+          </mat-error>
+          <mat-error *ngIf="createAppointmentForm.controls['lastname'].hasError('pattern')">
+            Please enter valid last name
+          </mat-error>
+          <mat-error *ngIf="createAppointmentForm.controls['lastname'].hasError('maxlength')">
+            Maximum 40 characters
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100 mb-2">
+          <input matInput placeholder="Email address" formControlName="email" required />
+          <mat-error *ngIf="createAppointmentForm.controls['email'].hasError('required')">
+            Please enter email address
+          </mat-error>
+          <mat-error *ngIf="createAppointmentForm.controls['email'].hasError('email')">
+            Please enter valid email address
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100 mb-2">
+          <input matInput placeholder="Age" formControlName="age" />
+          <mat-error *ngIf="createAppointmentForm.controls['age'].hasError('pattern')">
+            Please enter valid age
+          </mat-error>
+          <mat-error *ngIf="createAppointmentForm.controls['age'].hasError('min')">
+            Age must be greater than 0
+          </mat-error>
+        </mat-form-field>
+
+        <mat-radio-group class="w-100 mb-3" formControlName="gender">
+          <div style="color: grey;">Gender</div>
+          <mat-radio-button color="primary" style="padding: 4px 4px 0px 0px;" value="male">Male</mat-radio-button>
+          <mat-radio-button color="primary" style="padding: 4px 0px 0px 24px;" value="female">Female</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field class="w-100 mb-2 mt-2">
+          <input matInput [matDatepicker]="picker1" placeholder="Appointment Date" formControlName="date" required />
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-error *ngIf="createAppointmentForm.controls['date'].hasError('required')">
+            Please enter appointment date
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100 mb-2">
+          <input matTimepicker #t="matTimepicker"
+            [strict]="false" id="timepicker-example" mode="12h" formControlName="time"
+            placeholder="Appointment Time" />
+
+          <mat-error *ngIf="createAppointmentForm.controls['time'].hasError('required')">
+            Please enter appointment time
+          </mat-error>
+        </mat-form-field>
+      </mat-dialog-content>
+
+      <div class="btn-actions mt-2">
+        <button mat-raised-button type="submit" color="primary" class="me-2" (click)="saveAppointment()">Save</button>
+        <button mat-raised-button type="button" color="warn" (click)="cancelDialog()">Cancel</button>
+      </div>
+    </form>
+</div>

@@ -1,0 +1,16 @@
+.dialog-content .badge {
+    display: block;
+    background: #3f51b547;
+    margin-top: 5px;
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+.dialog-content a {
+    margin-left: 6px;
+}
+.dialog-actions {
+    justify-content: center;
+}
