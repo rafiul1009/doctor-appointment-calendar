@@ -95,6 +95,10 @@ export class AppComponent implements OnInit {
     this.router.navigateByUrl('month/' + number);
   }
 
+  goToHome() {
+    this.router.navigateByUrl('/');
+  }
+
   openAppointmentDialog() {
     const dialogRef = this.dialog.open(CreateAppointmentComponent, {
       width: '640px', disableClose: true

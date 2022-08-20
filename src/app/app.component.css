@@ -11,6 +11,11 @@
 .topbar h1 {
     margin-bottom: 0;
 }
+.topbar h1 a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .action-bar {
     display: flex;

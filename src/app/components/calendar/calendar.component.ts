@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { Day } from 'src/app/models/day.model';
 import { AppService } from 'src/app/services/app.service';
@@ -10,7 +10,7 @@ import { AppointmentDetailsModalComponent } from '../appointment-details-modal/a
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
-export class CalendarComponent implements AfterViewInit {
+export class CalendarComponent implements OnInit {
 
   public appointmentList: any[] = [];
   public weekDaysName = [
@@ -34,16 +34,14 @@ export class CalendarComponent implements AfterViewInit {
     this.currentYear = date.getFullYear();
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.appService.currentAppointmentList.subscribe((value: any) => {
       this.appointmentList = value;
       this.monthDays = this.getMonth(this.currentMonthIndex, this.currentYear);
-      // console.log(this.appointmentList);
     });
     this.appService.currentMonthNumber.subscribe((value: any) => {
       this.currentMonthIndex = parseInt(value) - 1;
       this.monthDays = this.getMonth(this.currentMonthIndex, this.currentYear);
-      // console.log(this.monthDays);
     });
   }
 
@@ -155,7 +153,14 @@ export class CalendarComponent implements AfterViewInit {
       let eventsSorted = events.sort((a, b) => (new Date(b.date + " " + b.time)) < (new Date(a.date + " " + a.time)) ? 1 : -1);
       return eventsSorted;
     } else {
-      return []
+      if (localStorage.getItem("appointmentList")) {
+        let appointmentList = JSON.parse(localStorage.getItem("appointmentList") as string);
+        let events = appointmentList.filter((event: any) => event.date == date);
+        let eventsSorted = events.sort((a: any, b: any) => (new Date(b.date + " " + b.time)) < (new Date(a.date + " " + a.time)) ? 1 : -1);
+        return eventsSorted;
+      } else {
+        return [];
+      }
     }
   }
 
